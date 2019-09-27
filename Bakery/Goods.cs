@@ -1,6 +1,6 @@
 namespace Bakery
 {
-  class Bread
+  public class Bread
   {
     private string _name;
     private int _price;
@@ -37,7 +37,7 @@ namespace Bakery
 
   }
 
-  class Pastery
+  public class Pastery
   {
     private string _name;
     private int _price;
