@@ -1,0 +1,11 @@
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/bin/Debug/netcoreapp2.2/bakery-console.deps.json
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/bin/Debug/netcoreapp2.2/bakery-console.runtimeconfig.json
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/bin/Debug/netcoreapp2.2/bakery-console.runtimeconfig.dev.json
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/bin/Debug/netcoreapp2.2/bakery-console.dll
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/bin/Debug/netcoreapp2.2/bakery-console.pdb
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/obj/Debug/netcoreapp2.2/bakery-console.csprojAssemblyReference.cache
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/obj/Debug/netcoreapp2.2/bakery-console.csproj.CoreCompileInputs.cache
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/obj/Debug/netcoreapp2.2/bakery-console.AssemblyInfoInputs.cache
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/obj/Debug/netcoreapp2.2/bakery-console.AssemblyInfo.cs
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/obj/Debug/netcoreapp2.2/bakery-console.dll
+/Users/loewymalkovich/Desktop/Epicodus/bakery-console/obj/Debug/netcoreapp2.2/bakery-console.pdb
