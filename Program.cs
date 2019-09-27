@@ -13,10 +13,12 @@ namespace Bakery
         if (userInput.ToLower() == "view" || userInput.ToLower() == "basket")
         {
           Console.WriteLine("--------------------------------\nYour order:\n" + loaf.GetQuantity() + " bread item(s) and " + croissant.GetQuantity() + " pastery item(s)." );
+          loaf.SetTotal();
+          croissant.SetTotal();
           double newBreadPrice = loaf.SetDeal();
           double newCroissantPrice = croissant.SetDeal();
-          double basketTotal = (newBreadPrice * loaf.GetQuantity()) + (newCroissantPrice * croissant.GetQuantity());
-          Console.WriteLine("Your total is $ " + basketTotal + ".");
+          double basketTotal = (newBreadPrice) + (newCroissantPrice);
+          Console.WriteLine("Your total is $ " + basketTotal + ".\n--------------------------------");
           Console.WriteLine("Would you like to exit program? (exit/continue)");
           string userContinue = Console.ReadLine();
           if (userContinue.ToLower() == "continue")
@@ -33,8 +35,7 @@ namespace Bakery
           Console.WriteLine("You have ordered a " + loaf.GetName() + " of bread.");
           Console.WriteLine("It will cost $" + loaf.GetPrice());
           loaf.SetAddOne();
-          loaf.SetTotal();
-          Console.WriteLine(loaf.GetTotal());
+          Console.WriteLine("You currently have " + loaf.GetQuantity() + " bread item(s)");
           Order(loaf, croissant);
         }
         else if  (userInput.ToLower() == "pastery")
@@ -42,8 +43,7 @@ namespace Bakery
           Console.WriteLine("You have ordered a " + croissant.GetName() + " of bread.");
           Console.WriteLine("It will cost $" + croissant.GetPrice());
           croissant.SetAddOne();
-          croissant.SetTotal();
-          Console.WriteLine(croissant.GetTotal());
+          Console.WriteLine("You currently have " + croissant.GetQuantity() + " pastery item(s)");
           Order(loaf, croissant);
         }
         else
@@ -58,7 +58,7 @@ namespace Bakery
         Bread loaf = new Bread("loaf", 4, 0, 0);
         Pastery croissant = new Pastery("croissant", 2, 0, 0);
 
-        Console.WriteLine("----------------------------------------------\nWelcome To Pierre's Bakery!\n----------------------------------------------\n");
+        Console.WriteLine("----------------------------------------------\nWelcome To Pierre's Bakery!\nWe currently have two deals:\nBuy 2 loafs, get 1 free. A single loaf costs $4.\n Buy 1 croissant for $2 or 3 for $5.\n----------------------------------------------\n");
         
         Program.Order(loaf, croissant);
       }

@@ -38,20 +38,19 @@ namespace Bakery
 
     public void SetTotal()
     {
-      _total = GetPrice() * GetQuantity();
+      _total = _price * _quantity;
     }
 
     public double SetDeal()
     {
       if (GetQuantity() >= 2)
       {
-        double newTotal = _total/2;
+        double newTotal = _total - 4;
         return newTotal;
       }
       else
       {
-        double newTotal = _total;
-        return newTotal;
+        return _total;
       }
     }
 
@@ -100,7 +99,7 @@ namespace Bakery
 
     public void SetTotal()
     {
-      _total = GetPrice() * GetQuantity();
+      _total = _price * _quantity;
     }
 
     public double SetDeal()
@@ -112,8 +111,7 @@ namespace Bakery
       }
       else
       {
-        double normalPrice = _total;
-        return normalPrice;
+        return _total;
       }
     }
   }
