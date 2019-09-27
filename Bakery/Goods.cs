@@ -1,4 +1,3 @@
-
 namespace Bakery
 {
   class Bread
@@ -6,10 +5,13 @@ namespace Bakery
     private string _name;
     private int _price;
 
-    public Bread(string name, int price)
+    private int _quantity;
+
+    public Bread(string name, int price, int quantity)
     {
       _name = name;
       _price = price;
+      _quantity = quantity;
     }
 
     public string GetName()
@@ -21,6 +23,16 @@ namespace Bakery
     public int GetPrice()
     {
       return _price;
+    }
+
+    public int GetQuantity()
+    {
+      return _quantity;
+    }
+
+    public void SetAddOne()
+    {
+      _quantity += 1;
     }
 
   }
@@ -29,11 +41,13 @@ namespace Bakery
   {
     private string _name;
     private int _price;
+    private int _quantity;
 
-    public Pastery(string name, int price)
+    public Pastery(string name, int price, int quantity)
     {
       _name = name;
       _price = price;
+      _quantity = quantity;
     }
 
     public string GetName()
@@ -46,7 +60,15 @@ namespace Bakery
     {
       return _price;
     }
-  
 
+    public int GetQuantity()
+    {
+      return _quantity;
+    }
+
+    public void SetAddOne()
+    {
+      _quantity += 1;
+    }
   }
 }
