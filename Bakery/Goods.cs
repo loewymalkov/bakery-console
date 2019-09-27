@@ -3,11 +3,11 @@ namespace Bakery
   public class Bread
   {
     private string _name;
-    private int _price;
+    private double _price;
 
-    private int _quantity;
+    private double _quantity;
 
-    public Bread(string name, int price, int quantity)
+    public Bread(string name, double price, double quantity)
     {
       _name = name;
       _price = price;
@@ -20,12 +20,12 @@ namespace Bakery
     }
 
 
-    public int GetPrice()
+    public double GetPrice()
     {
       return _price;
     }
 
-    public int GetQuantity()
+    public double GetQuantity()
     {
       return _quantity;
     }
@@ -33,6 +33,14 @@ namespace Bakery
     public void SetAddOne()
     {
       _quantity += 1;
+    }
+
+    public void SetDeal()
+    {
+      if (GetQuantity() >= 2)
+      {
+        _price = (_price/2);
+      }
     }
 
   }
@@ -40,10 +48,10 @@ namespace Bakery
   public class Pastery
   {
     private string _name;
-    private int _price;
-    private int _quantity;
+    private double _price;
+    private double _quantity;
 
-    public Pastery(string name, int price, int quantity)
+    public Pastery(string name, double price, double quantity)
     {
       _name = name;
       _price = price;
@@ -56,12 +64,12 @@ namespace Bakery
     }
 
 
-    public int GetPrice()
+    public double GetPrice()
     {
       return _price;
     }
 
-    public int GetQuantity()
+    public double GetQuantity()
     {
       return _quantity;
     }
@@ -69,6 +77,14 @@ namespace Bakery
     public void SetAddOne()
     {
       _quantity += 1;
+    }
+
+    public void SetDeal()
+    {
+      if (GetQuantity() >= 3)
+      {
+        _price = 5;
+      }
     }
   }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Bakery
 {
@@ -7,12 +6,15 @@ namespace Bakery
     {
       public static void Order(Bread loaf, Pastery croissant)
       {
+
         Console.WriteLine("Would you like to purchase bread or a pastery, or view your basket? (bread/pastery/basket)");
         string userInput = Console.ReadLine();
 
         if (userInput.ToLower() == "view" || userInput.ToLower() == "basket")
         {
           Console.WriteLine("--------------------------------\nYour order:\n" + loaf.GetQuantity() + " bread item(s) and " + croissant.GetQuantity() + " pastery item(s)." );
+          double basketTotal = (loaf.GetPrice() * loaf.GetQuantity()) + (croissant.GetPrice() * croissant.GetQuantity());
+          Console.WriteLine("Your total is $ " + basketTotal + ".");
           Console.WriteLine("Would you like to exit program? (exit/continue)");
           string userContinue = Console.ReadLine();
           if (userContinue.ToLower() == "continue")
@@ -47,14 +49,12 @@ namespace Bakery
 
       public static void Main()
       {
-        Bread loaf = new Bread("loaf", 5, 0);
-        Pastery croissant = new Pastery("croissant", 4, 0);
+        Bread loaf = new Bread("loaf", 4, 0);
+        Pastery croissant = new Pastery("croissant", 2, 0);
 
         Console.WriteLine("----------------------------------------------\nWelcome To Pierre's Bakery!\n----------------------------------------------\n");
         
         Program.Order(loaf, croissant);
-
-
       }
     }
 }
