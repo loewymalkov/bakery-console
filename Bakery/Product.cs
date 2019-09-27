@@ -11,6 +11,17 @@ namespace Bakery
       _price = price;
     }
 
+    public string GetName()
+    {
+      return _name;
+    }
+
+
+    public int GetPrice()
+    {
+      return _price;
+    }
+
   }
 
   class Pastery
