@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace bakery_console
+namespace Bakery
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("----------------------------------------------\nWelcome To Pierre's Bakery!\n----------------------------------------------");
+
         }
     }
 }
