@@ -9,6 +9,7 @@ namespace Bakery
       {
         Bread loaf = new Bread("loaf", 5);
         Pastery croissant = new Pastery("croissant", 4);
+        Dictionary<string, int> basket = new Dictionary<string, int>(); 
 
         Console.WriteLine("----------------------------------------------\nWelcome To Pierre's Bakery!\n----------------------------------------------\n");
         
@@ -23,21 +24,23 @@ namespace Bakery
 
         if (userInput.ToLower() == "view" || userInput.ToLower() == "basket")
         {
-          Console.WriteLine()
+          Console.WriteLine();
         }
         else if (userInput.ToLower() == "bread")
         {
           Console.WriteLine("You have ordered a" + loaf.GetName() + "of bread.");
           Console.WriteLine("It will cost $" + loaf.GetPrice());
+          basket.Add(loaf.GetName(), loaf.GetPrice());
         }
         else if  (userInput.ToLower() == "pastery")
         {
           Console.WriteLine("You have ordered a" + loaf.GetName() + "of bread.");
           Console.WriteLine("It will cost $" + loaf.GetPrice());
+          basket.Add(croissant.GetName(), croissant.GetPrice());
         }
         
 
-        Dictionary<string, int> basket = new Dictionary<string, int>(0); 
+        
         
       }
     }
