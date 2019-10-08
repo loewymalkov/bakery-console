@@ -2,55 +2,31 @@ namespace Bakery
 {
   public class Bread
   {
-    private string _name;
-    private double _price;
-    private double _quantity;
-    private double _total;
-
-    public Bread(string name, double price, double quantity, double total)
-    {
-      _name = name;
-      _price = price;
-      _quantity = quantity;
-      _total = total;
+    public string Name { get; set; } = "loaf";
+    public double Price { get; set; } = 4;
+    public double Quantity { get; set; } = 0;
+    private double _total { get; set; } = 0;
+    public double Total 
+    { 
+      get {return _total;}
+      set {_total = this.Price * this.Quantity;}
     }
 
-    public string GetName()
+    public void AddOne()
     {
-      return _name;
-    }
-    public double GetPrice()
-    {
-      return _price;
-    }
-    public double GetQuantity()
-    {
-      return _quantity;
-    }
-    public double GetTotal()
-    {
-      return _total;
-    }
-    public void SetAddOne()
-    {
-      _quantity += 1;
+      Quantity += 1;
     }
 
-    public void SetTotal()
+    public double Deal()
     {
-      _total = _price * _quantity;
-    }
-
-    public double SetDeal()
-    {
-      if (GetQuantity() >= 2)
+      if (Quantity >= 2)
       {
-        double newTotal = _total - 4;
+        double newTotal = Total - 4;
         return newTotal;
       }
       else
       {
-        return _total;
+        return Total;
       }
     }
 
@@ -58,60 +34,31 @@ namespace Bakery
 
   public class Pastery
   {
-    private string _name;
-    private double _price;
-    private double _quantity;
-    private double _total;
-
-    public Pastery(string name, double price, double quantity, double total)
-    {
-      _name = name;
-      _price = price;
-      _quantity = quantity;
-      _total = total;
+    public string Name { get; set; } = "croissant";
+    public double Price { get; set; } = 2;
+    public double Quantity { get; set; } = 0;
+    private double _total { get; set; } = 0;
+    public double Total 
+    { 
+      get {return _total;}
+      set {_total = this.Price * this.Quantity;}
     }
 
-    public string GetName()
+    public void AddOne()
     {
-      return _name;
+      Quantity += 1;
     }
 
-
-    public double GetPrice()
+    public double Deal()
     {
-      return _price;
-    }
-
-    public double GetQuantity()
-    {
-      return _quantity;
-    }
-
-    public double GetTotal()
-    {
-      return _total;
-    }
-
-    public void SetAddOne()
-    {
-      _quantity += 1;
-    }
-
-    public void SetTotal()
-    {
-      _total = _price * _quantity;
-    }
-
-    public double SetDeal()
-    {
-      if (GetQuantity() >= 3)
+      if (Quantity >= 3)
       {
-        double threeForFive = _total - 1;
+        double threeForFive = Total - 1;
         return threeForFive;
       }
       else
       {
-        return _total;
+        return Total;
       }
     }
   }

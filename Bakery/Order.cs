@@ -12,11 +12,11 @@ namespace Bakery
 
         if (userInput.ToLower() == "view" || userInput.ToLower() == "basket")
         {
-          Console.WriteLine("--------------------------------\nYour order:\n" + loaf.GetQuantity() + " bread item(s) and " + croissant.GetQuantity() + " pastery item(s)." );
-          loaf.SetTotal();
-          croissant.SetTotal();
-          double newBreadPrice = loaf.SetDeal();
-          double newCroissantPrice = croissant.SetDeal();
+          Console.WriteLine("--------------------------------\nYour order:\n" + loaf.Quantity + " bread item(s) and " + croissant.Quantity + " pastery item(s)." );
+          loaf.Total += loaf.Quantity * loaf.Price;
+          croissant.Total += croissant.Quantity * croissant.Price;
+          double newBreadPrice = loaf.Deal();
+          double newCroissantPrice = croissant.Deal();
           double basketTotal = (newBreadPrice) + (newCroissantPrice);
           Console.WriteLine("Your total is $ " + basketTotal + ".\n--------------------------------");
           Console.WriteLine("Would you like to exit program? (exit/continue)");
@@ -25,25 +25,21 @@ namespace Bakery
           {
           NewOrder(loaf, croissant);
           }
-          else
-          {
-            // exits program
-          }
         }
         else if (userInput.ToLower() == "bread")
         {
-          Console.WriteLine("You have ordered a " + loaf.GetName() + " of bread.");
-          Console.WriteLine("It will cost $" + loaf.GetPrice());
-          loaf.SetAddOne();
-          Console.WriteLine("You currently have " + loaf.GetQuantity() + " bread item(s)");
+          Console.WriteLine("You have ordered a " + loaf.Name + " of bread.");
+          Console.WriteLine("It will cost $" + loaf.Price);
+          loaf.AddOne();
+          Console.WriteLine("You currently have " + loaf.Quantity + " bread item(s)");
           NewOrder(loaf, croissant);
         }
         else if  (userInput.ToLower() == "pastery")
         {
-          Console.WriteLine("You have ordered a " + croissant.GetName() + " of bread.");
-          Console.WriteLine("It will cost $" + croissant.GetPrice());
-          croissant.SetAddOne();
-          Console.WriteLine("You currently have " + croissant.GetQuantity() + " pastery item(s)");
+          Console.WriteLine("You have ordered a " + croissant.Name + " of bread.");
+          Console.WriteLine("It will cost $" + croissant.Price);
+          croissant.AddOne();
+          Console.WriteLine("You currently have " + croissant.Quantity + " pastery item(s)");
           NewOrder(loaf, croissant);
         }
         else
