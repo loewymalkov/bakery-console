@@ -12,6 +12,7 @@ namespace Bakery
       set {_total = this.Price * this.Quantity;}
     }
 
+
     public void AddOne()
     {
       Quantity += 1;
@@ -21,12 +22,12 @@ namespace Bakery
     {
       if (Quantity >= 2)
       {
-        double newTotal = Total - 4;
+        double newTotal = this.Total - 4;
         return newTotal;
       }
       else
       {
-        return Total;
+        return this.Total;
       }
     }
 
@@ -53,12 +54,12 @@ namespace Bakery
     {
       if (Quantity >= 3)
       {
-        double threeForFive = Total - 1;
+        double threeForFive = this.Total - 1;
         return threeForFive;
       }
       else
       {
-        return Total;
+        return this.Total;
       }
     }
   }
