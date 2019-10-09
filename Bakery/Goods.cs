@@ -5,32 +5,29 @@ namespace Bakery
     public string Name { get; set; } = "loaf";
     public double Price { get; set; } = 4;
     public double Quantity { get; set; } = 0;
-    private double _total { get; set; } = 0;
-    public double Total 
-    { 
-      get {return _total;}
-      set {_total = this.Price * this.Quantity;}
+    public int Breakpoint { get; set; } = 2;
+    public double Total { get; set; }
+
+     public void CalculatePrice()
+    {
+      Total = CalculateMax() - GetDiscount();
     }
+
+    public double CalculateMax()
+    {
+      return (Price * Quantity);
+    }
+
+    public double GetDiscount()
+  {
+    return (Quantity/Breakpoint) * Price;
+  }
 
 
     public void AddOne()
     {
       Quantity += 1;
     }
-
-    public double Deal()
-    {
-      if (Quantity >= 2)
-      {
-        double newTotal = this.Total - 4;
-        return newTotal;
-      }
-      else
-      {
-        return this.Total;
-      }
-    }
-
   }
 
   public class Pastery
@@ -38,29 +35,27 @@ namespace Bakery
     public string Name { get; set; } = "croissant";
     public double Price { get; set; } = 2;
     public double Quantity { get; set; } = 0;
-    private double _total { get; set; } = 0;
-    public double Total 
-    { 
-      get {return _total;}
-      set {_total = this.Price * this.Quantity;}
+    public int Breakpoint { get; set; } = 3;
+    public double Total { get; set; }
+
+     public void CalculatePrice()
+    {
+      Total = CalculateMax() - GetDiscount();
     }
+
+    public double CalculateMax()
+    {
+      return (Price * Quantity);
+    }
+
+    public double GetDiscount()
+  {
+    return (Quantity/Breakpoint) * Price;
+  }
 
     public void AddOne()
     {
       Quantity += 1;
-    }
-
-    public double Deal()
-    {
-      if (Quantity >= 3)
-      {
-        double threeForFive = this.Total - 1;
-        return threeForFive;
-      }
-      else
-      {
-        return this.Total;
-      }
     }
   }
 }

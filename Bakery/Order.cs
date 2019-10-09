@@ -13,12 +13,9 @@ namespace Bakery
         if (userInput.ToLower() == "view" || userInput.ToLower() == "basket")
         {
           Console.WriteLine("--------------------------------\nYour order:\n" + loaf.Quantity + " bread item(s) and " + croissant.Quantity + " pastery item(s)." );
-          loaf.Total += loaf.Quantity * loaf.Price;
-          croissant.Total += croissant.Quantity * croissant.Price;
-          double newBreadPrice = loaf.Deal();
-          double newCroissantPrice = croissant.Deal();
-          double basketTotal = (newBreadPrice) + (newCroissantPrice);
-          Console.WriteLine("Your total is $ " + basketTotal + ".\n--------------------------------");
+          loaf.CalculatePrice();
+          croissant.CalculatePrice();
+          Console.WriteLine("Your total is $ " + (loaf.Total + croissant.Total) + ".\n--------------------------------");
           Console.WriteLine("Would you like to exit program? (exit/continue)");
           string userContinue = Console.ReadLine();
           if (userContinue.ToLower() == "continue")
